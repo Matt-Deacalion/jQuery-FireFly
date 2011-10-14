@@ -10,7 +10,7 @@
  *           $.firefly.stop();
  *           $.firefly.start();
  *
- * Copyright ï¿½ 2011 Matt 'Dirty Monkey' Stevens, http://www.dirtymonkey.co.uk
+ * Copyright © 2011 Matt 'Dirty Monkey' Stevens, http://www.dirtymonkey.co.uk
  * License: http://www.opensource.org/licenses/mit-license.php
  */
 (function($){
