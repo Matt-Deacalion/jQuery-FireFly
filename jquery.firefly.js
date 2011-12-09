@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FireFly v1.0 - jQuery plugin
  *
  * An updated version of Dharmveer Motyar's firefly plugin.
@@ -10,7 +10,7 @@
  *           $.firefly.stop();
  *           $.firefly.start();
  *
- * Copyright � 2011 Matt 'Dirty Monkey' Stevens, http://www.dirtymonkey.co.uk
+ * Copyright © 2011 Matt 'Dirty Monkey' Stevens, http://www.dirtymonkey.co.uk
  * License: http://www.opensource.org/licenses/mit-license.php
  */
 (function($){
