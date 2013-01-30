@@ -1,5 +1,5 @@
 /*
- * FireFly v1.0 - jQuery plugin
+ * FireFly v1.1 - jQuery plugin
  *
  * An updated version of Dharmveer Motyar's firefly plugin.
  * Creates an effect of fireflys flying around your page.
@@ -74,7 +74,7 @@
 
 
     // shortcuts
-    var ff, ffs, x, y, start, timer_handle, sparks = []
+    var ff, ffs, x, y, old_x, old_y, start, timer_handle, delay_handle, sparks = []
 
 
     // init
@@ -102,8 +102,36 @@
     // records start time, watches window resize and begins movement
     $.firefly.start = function(){
         start = parseInt((new Date).getTime()/1000)
-        $(window).bind('resize.firefly',function(){ff.calibrate()})
+        $(window).bind('resize.firefly', function(){
+            ff.delay(ff.resized, 250)
+        })
         for (i = 0; i < sparks.length; i++) ff.move(sparks[i])
+    }
+
+
+    // reset
+    // stop and remove all fireflies, then create and start them again
+    $.firefly.reset = function(){
+        for (i = 0; i < ffs.total; i++)
+            sparks[i].remove()
+
+        $.firefly()
+    }
+
+
+    // delay
+    // utility function to prevent the resize event from being fired multiple times
+    $.firefly.delay = function(callback, milliseconds){
+        clearTimeout(delay_handle)
+        delay_handle = setTimeout(callback, milliseconds);
+    }
+
+
+    // resized
+    // event handler to deal with window resizing
+    $.firefly.resized = function(e){
+        ff.calibrate();
+        (x < old_x || y < old_y) && ff.reset()
     }
 
 
@@ -120,6 +148,7 @@
     $.firefly.remove = function() {
         for (i = 0; i < ffs.total; i++) $('img[src="'+ffs.images[i]+'"]').remove()
     }
+
 
     // create
     // inserts a spark into the DOM at a random position
@@ -161,6 +190,9 @@
     // calibrate
     // get the dimensions of the window
     $.firefly.calibrate = function(){
+        old_x = x
+        old_y = y
+
         x = $(window).width()
         y = $(window).height()
     }
