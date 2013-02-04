@@ -1,5 +1,5 @@
 /*
- * FireFly v1.1 - jQuery plugin
+ * FireFly v1.1.1 - jQuery plugin
  *
  * An updated version of Dharmveer Motyar's firefly plugin.
  * Creates an effect of fireflys flying around your page.
