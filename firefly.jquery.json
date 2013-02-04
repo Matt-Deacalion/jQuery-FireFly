@@ -1,0 +1,32 @@
+{
+    "name": "firefly",
+    "version": "1.1.0",
+    "title": "jQuery FireFly",
+    "author": {
+        "name": "Matt Stevens",
+        "email": "matt@dirtymonkey.co.uk",
+        "url": "http://www.dirtymonkey.co.uk/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://mattstevens.mit-license.org/p"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.3"
+    },
+    "description": "Creates an effect of fireflys flying around your page.",
+    "keywords": [
+        "firefly",
+        "fire fly",
+        "fireflys",
+        "fireflies",
+        "stars"
+    ],
+    "demo": "http://www.dirtymonkey.co.uk/firefly/",
+    "homepage": "https://github.com/Matt-Stevens/jQuery-FireFly",
+    "files": [
+        "jquery.firefly.js"
+    ]
+}
